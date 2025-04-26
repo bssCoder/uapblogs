@@ -1,0 +1,67 @@
+/* MasonryGrid.css */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 16px;
+  padding: 16px;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.masonry-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.masonry-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  text-align: center;
+  color: #767676;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  fill: currentColor;
+}
+
+.masonry-empty-state h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.masonry-empty-state p {
+  font-size: 16px;
+  margin: 0;
+}
+
+@media (max-width: 639px) {
+  .masonry-grid {
+    --columns: 2;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .masonry-grid {
+    --columns: 3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .masonry-grid {
+    --columns: 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    --columns: 5;
+  }
+}

@@ -1,0 +1,164 @@
+/* Pin.css */
+.pin {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  cursor: zoom-in;
+}
+
+.pin:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pin-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.pin-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pin-image.loaded {
+  opacity: 1;
+}
+
+.pin-image-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #e60023;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pin-image-error {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #fef2f2;
+  color: #dc2626;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.error-icon {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.pin-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease;
+  border-radius: 16px;
+}
+
+.pin:hover .pin-overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.pin-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pin:hover .pin-actions {
+  opacity: 1;
+}
+
+.pin-action-group {
+  display: flex;
+  gap: 8px;
+}
+
+.pin-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.pin-action-button:hover {
+  background-color: #f0f0f0;
+}
+
+.pin-action-button svg {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.pin-content {
+  padding: 12px;
+}
+
+.pin-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pin-user {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.pin-user-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.pin-user-name {
+  font-size: 12px;
+  color: #5f5f5f;
+}
